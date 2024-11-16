@@ -17,7 +17,7 @@ function Hero() {
             With our expert guidance, get admission to top institutions in Food
             Technology and Agriculture.
           </p>
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-white font-medium py-3 px-6 rounded-full transition-colors duration-300">
+          <button className="bg-[#F9BB05] hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-[60px] transition-colors duration-300">
             Get Started
           </button>
         </div>

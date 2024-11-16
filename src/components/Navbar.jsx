@@ -5,6 +5,7 @@ import downArrow from '../assets/downArrow.svg'
 import programIcon from '../assets/Program.svg'
 import shoppingCartIcon from '../assets/shoppingCard.svg'
 import testSeriesIcon from '../assets/TestSereries.svg'
+import profileIcon from '../assets/profile.svg'
 function Navbar() {
     const NavItems = [
         {
@@ -27,11 +28,6 @@ function Navbar() {
             item: 'My Cart',
             link: '#cart',
         },
-        {
-            icon: downArrow,
-            item: 'More',
-            link: '#more',
-        },
     ];
 
     return (
@@ -50,7 +46,7 @@ function Navbar() {
                             href={navItem.link}
                             className="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300"
                         >
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 items-center">
                                 {navItem.icon && <span className="">
                                     <img src={navItem.icon} alt="Logo" className="w-[20px] h-[20px]" />
                                 </span>}
@@ -58,14 +54,20 @@ function Navbar() {
                             </div>
                         </a>
                     ))}
+
+                    <div className='text-gray-700 hover:text-purple-600 font-medium
+                     transition-colors duration-300 flex gap-2 flex-row items-center'>
+                        <span>More</span>
+                        <span>  <img src={downArrow} alt="Logo" className="w-[20px] h-[20px]" /> </span>
+                    </div>
                 </div>
 
                 {/* Profile Icon */}
                 <div>
                     <img
-                        src="/path-to-profile.png"
+                        src={profileIcon}
                         alt="Profile"
-                        className="w-8 h-8 rounded-full border-2 border-purple-600"
+                        className="w-[50px] h-[50px] rounded-full border-2 border-purple-600"
                     />
                 </div>
             </div>

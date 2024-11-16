@@ -26,13 +26,7 @@ const students = [
     institute: 'Institute of Chemical Technology (Mumbai)',
     image: sanviImage,
   },
-  {
-    rank: 4,
-    name: 'Aleena Shaji',
-    year: 'GATE 2022',
-    institute: 'Institute of Chemical Technology (Mumbai)',
-    image: aleenaImage,
-  },
+  
 ];
 
 function HallOfFame() {
@@ -48,33 +42,41 @@ function HallOfFame() {
         </p>
 
         {/* Students List */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[120px] md:gap-[32px] pt-20">
           {students.map((student) => (
             <div
               key={student.rank}
-              className="relative bg-[#F9F4FF] border border-[#D9BFFB] rounded-[20px] shadow-md p-[24px] pt-[64px] pb-[32px] flex flex-col items-center text-center"
+              className="relative bg-[#F5E7FF] rounded-[20px] shadow-md p-[24px] pt-[64px] pb-[32px] flex flex-col items-center text-center"
             >
+
+              
+              {/* Image */}
+              <div className="absolute -top-[100px]">
+                <img
+                  src={student.image}
+                  alt={student.name}
+                  className="w-[172px] h-[172px] rounded-full bg-[#DEDEDE] overflow-hidden object-cover border-[10px] border-[#FFFFFF]"
+                />
+              </div>
+
+
               {/* Rank Badge */}
-              <div className="absolute -top-[28px] bg-white border border-[#7A1DC5] text-[#7A1DC5] rounded-full w-[64px] h-[64px] flex flex-col items-center justify-center shadow-md">
+              <div className="absolute top-[26px] w-[72px] h-[72px] p-[10px]   bg-white border-[2.4px] border-[#7A1DC5]
+                 text-[#7A1DC5] rounded-full
+              flex flex-col items-center justify-center">
                 <span className="text-[12px] leading-[18px] font-semibold">AIR</span>
                 <span className="text-[20px] leading-[30px] font-bold">{student.rank}</span>
               </div>
 
-              {/* Image */}
-              <div className="relative -mt-[60px]">
-                <img
-                  src={student.image}
-                  alt={student.name}
-                  className="w-[100px] h-[100px] rounded-full object-cover border-[6px] border-[#F9F4FF]"
-                />
-              </div>
 
               {/* Details */}
-              <h3 className="text-[18px] font-bold text-[#1D1D1F] mt-[16px] mb-[8px]">{student.name}</h3>
-              <p className="text-[14px] text-[#626262] mb-[8px]">{student.year}</p>
-              <div className="bg-white px-[16px] py-[8px] rounded-[12px] shadow-md">
-                <p className="text-[14px] font-medium text-[#626262]">{student.institute}</p>
+             <div className='mt-[16px] p-3'>
+             <h3 className="text-[20px] leading-[30px]  font-bold text-[#1D1D1F] mt-[16px]">{student.name}</h3>
+              <p className="text-[16px] leading-[24px] font-bold text-[#333336] mb-[8px]">{student.year}</p>
+              <div className="bg-white px-[20px] py-[17px] rounded-[10px] mt-[40px]">
+                <p className="text-[16px] leading-[24px] text-center font-bold text-[#333336]">{student.institute}</p>
               </div>
+             </div>
             </div>
           ))}
         </div>
